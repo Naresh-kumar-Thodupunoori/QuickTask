@@ -1,5 +1,3 @@
-// src/TaskInput.js
-
 import React, { useState } from 'react';
 
 function TaskInput({ addTask }) {

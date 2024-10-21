@@ -1,5 +1,3 @@
-// src/TaskItem.js
-
 import React from 'react';
 
 function TaskItem({ task, deleteTask }) {

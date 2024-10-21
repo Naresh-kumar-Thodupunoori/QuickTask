@@ -1,15 +1,12 @@
-// src/App.js
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import TaskInput from './TaskInput';
 import TaskList from './TaskList';
-import './App.css'; // Optional for styling
+import './App.css';
 
 function App() {
   const [tasks, setTasks] = useState([]);
 
-  // Fetch tasks from the backend
   useEffect(() => {
     axios.get('http://localhost:5000/tasks')
       .then(response => {
@@ -18,7 +15,6 @@ function App() {
       .catch(error => console.error('Error fetching tasks:', error));
   }, []);
 
-  // Add a new task
   const addTask = (taskText) => {
     axios.post('http://localhost:5000/tasks', { text: taskText })
       .then(response => {
@@ -27,7 +23,6 @@ function App() {
       .catch(error => console.error('Error adding task:', error));
   };
 
-  // Delete a task
   const deleteTask = (id) => {
     axios.delete(`http://localhost:5000/tasks/${id}`)
       .then(() => {
